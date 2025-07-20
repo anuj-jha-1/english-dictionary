@@ -1,40 +1,53 @@
-const inputEl = document.getElementById("input");
-const infoTextEl = document.getElementById("info-text");
-const meaningContainerEl = document.getElementById("meaning-container");
-const titleEl = document.getElementById("title");
-const meaningEl = document.getElementById("meaning");
-const audioEl = document.getElementById("audio");
+const input = document.getElementById("input");
+const infoText = document.getElementById("info-text");
+const meaningContainer = document.getElementById("meaning-container");
+const title = document.getElementById("title");
+const meaning = document.getElementById("meaning");
+const audio = document.getElementById("audio");
+const pos = document.getElementById("part-of-speech");
+const example = document.getElementById("example");
+const synonyms = document.getElementById("synonyms");
+const antonyms = document.getElementById("antonyms");
+const themeToggle = document.getElementById("theme-toggle");
 
-async function fetchAPI(word) {
-  try {
-    infoTextEl.style.display = "block";
-    meaningContainerEl.style.display = "none";
-    infoTextEl.innerText = `Searching the meaning of "${word}"`;
-    const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
-    const result = await fetch(url).then((res) => res.json());
+input.addEventListener("keyup", async (e) => {
+  if (e.key === "Enter" && input.value.trim() !== "") {
+    const word = input.value.trim();
+    infoText.style.display = "block";
+    meaningContainer.style.display = "none";
+    infoText.innerText = `Searching the meaning of "${word}"...`;
 
-    if (result.title) {
-      meaningContainerEl.style.display = "block";
-      infoTextEl.style.display = "none";
-      titleEl.innerText = word;
-      meaningEl.innerText = "N/A";
-      audioEl.style.display = "none";
-    } else {
-      infoTextEl.style.display = "none";
-      meaningContainerEl.style.display = "block";
-      audioEl.style.display = "inline-flex";
-      titleEl.innerText = result[0].word;
-      meaningEl.innerText = result[0].meanings[0].definitions[0].definition;
-      audioEl.src = result[0].phonetics[0].audio;
+    try {
+      const response = await fetch(
+        `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+      );
+      const data = await response.json();
+
+      if (!data[0]) {
+        infoText.innerText = `No definition found for "${word}".`;
+        return;
+      }
+
+      infoText.style.display = "none";
+      meaningContainer.style.display = "block";
+
+      const def = data[0];
+      title.innerText = def.word;
+      meaning.innerText = def.meanings[0].definitions[0].definition;
+      audio.src = def.phonetics[0]?.audio || "";
+
+      pos.innerText = def.meanings[0].partOfSpeech || "-";
+      example.innerText = def.meanings[0].definitions[0].example || "-";
+      synonyms.innerText = def.meanings[0].synonyms?.join(", ") || "-";
+      antonyms.innerText = def.meanings[0].antonyms?.join(", ") || "-";
+    } catch (error) {
+      infoText.innerText = "An error occurred, please try again.";
+      meaningContainer.style.display = "none";
     }
-  } catch (error) {
-    console.log(error);
-    infoTextEl.innerText = `an error happened, try again later`;
   }
-}
+});
 
-inputEl.addEventListener("keyup", (e) => {
-  if (e.target.value && e.key === "Enter") {
-    fetchAPI(e.target.value);
-  }
+// Dark/Light Mode Toggle
+themeToggle.addEventListener("change", () => {
+  document.body.classList.toggle("dark-mode");
 });

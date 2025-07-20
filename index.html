@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>English Dictionary</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="container">
-      <h1 class="heading">English Dictionary</h1>
-      <input placeholder="Search a word" type="text" class="input" id="input" />
-      <p class="info-text" id="info-text">Type a word and press enter</p>
-      <div class="meaning-container" id="meaning-container">
-        <p>Word Title: <span class="title" id="title">___</span></p>
-        <p>Meaning: <span class="meaning" id="meaning">___</span></p>
-        <audio src="" controls id="audio"></audio>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English Dictionary</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Dark/Light Mode Toggle -->
+  <div class="toggle-container">
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="container">
+    <h1 class="heading">English Dictionary</h1>
+    <input placeholder="Search a word" type="text" class="input" id="input" />
+    <p class="info-text" id="info-text">Type a word and press Enter</p>
+
+    <div class="meaning-container" id="meaning-container">
+      <p><strong>Word Title:</strong> <span class="title" id="title">___</span></p>
+      <p><strong>Meaning:</strong> <span class="meaning" id="meaning">___</span></p>
+      <audio src="" controls id="audio"></audio>
+
+      <div class="extra-info" id="extra-info">
+        <p><strong>Part of Speech:</strong> <span id="part-of-speech">-</span></p>
+        <p><strong>Example:</strong> <span id="example">-</span></p>
+        <p><strong>Synonyms:</strong> <span id="synonyms">-</span></p>
+        <p><strong>Antonyms:</strong> <span id="antonyms">-</span></p>
       </div>
     </div>
-    <script src="index.js"></script>
-  </body>
+  </div>
+
+  <script src="index.js"></script>
+</body>
 </html>
