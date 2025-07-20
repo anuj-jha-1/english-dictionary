@@ -1,78 +1,69 @@
 # 📚 English Dictionary Web App
 
-A simple and responsive **English Dictionary** web application built using **HTML**, **CSS**, and **JavaScript**. This app allows users to search for the meaning and pronunciation of English words.
+An interactive and responsive **English Dictionary** web application built with **HTML**, **CSS**, and **JavaScript**.  
+This app allows users to search for any English word and get its meaning, pronunciation, part of speech, example, synonyms, antonyms — all in a modern UI with **Dark/Light Mode** toggle.
 
 ---
 
 ## 🌟 Features
 
-- 🔍 Search for any English word
-- 🔊 Audio pronunciation
-- 📖 Display of part of speech and meaning
-- 📱 Responsive and clean UI
+- 🔍 Search any English word
+- 📖 Shows part of speech and meaning
+- 🗣️ Audio pronunciation support
+- 💬 Displays example sentence (if available)
+- 🧠 Synonyms and antonyms list
+- 🌓 Dark / Light Mode toggle
+- 📱 Fully responsive UI
+- ❌ Error message for invalid or empty input
 
 ---
 
 ## 📁 Project Structure
 
+```bash
 english-dictionary/
-┣ 📄 index.html # Main HTML page
-┣ 📄 style.css # Styling for the app
-┣ 📄 index.js # Logic for fetching dictionary data
-┗ 📄 README.md # Project description
+├── index.html       # Main HTML file
+├── style.css        # Styling and Dark/Light theme
+├── index.js         # JavaScript logic & API integration
+└── README.md        # Project documentation
 
 
 ---
 
-## 🚀 How to Use
-
-1. Download or clone this repository:
+🚀 How to Use
+1. Clone the Repository:
    ```bash
    git clone https://github.com/your-username/english-dictionary.git
-2.Open index.html in any modern browser.
+   cd english-dictionary
 
-3. Type any English word into the search box and hit enter or click the search button.
+2. Run the App:
+   - Open index.html in your browser
+   - Or use a Live Server extension in VS Code
 
-4. The app will fetch and display:
-
-      - Word definition
-      - Part of speech
-      - Pronunciation with audio
+3. Search a Word:
+   - Type a word into the search bar
+   - Hit Enter or click the search icon
+   - View full definition, example, audio pronunciation, synonyms & antonyms
 
 🧠 Tech Stack
-    - HTML5
-    - CSS3
-    - JavaScript (ES6+)
-    - Dictionary API (like api.dictionaryapi.dev)
+    - HTML5 – Layout and structure
+    - CSS3 – Styling and themes
+    - JavaScript (ES6+) – Interactivity and API calls
+    - API Used: [dictionaryapi.dev](https://dictionaryapi.dev)
 
 💡 Future Improvements
-    - Add dark mode toggle 🌙
-    - Support for synonyms and antonyms
-    - Save search history
+   - 🕵️‍♂️ Search history with local storage
+   - 📌 Bookmark/favorite words
+   - 🌍 Multilingual dictionary support
+   - 🔤 Auto-suggestions as user types
 
 🙋‍♂️ Author
 Made with ❤️ by Anuj Jha
 
 
-📜 License
-This project is open-source and free to use.
+## 📜 License
 
----
+This project is licensed under the **MIT License**.  
+You're free to use, modify, and distribute this project for personal or commercial purposes — just don't forget to give proper credit.
 
-### 🔍 Key Fixes I Did:
-
-- ✅ `bash` command properly closed using triple backticks.
-- ✅ Proper indentation and spacing for lists.
-- ✅ Used code block for `Project Structure`.
-- ✅ Links and markdown formatting corrected.
-
----
-
-### 🔚 Final Step:
-Replace your existing README with the above version. You can now:
-
-- Push it to GitHub using GitHub Desktop  
-**OR**
-- Open your repo on GitHub → Click `README.md` → Click ✏️ Edit → Paste the updated content → Commit changes
-
-
+See the [LICENSE](./LICENSE) file for more details.
