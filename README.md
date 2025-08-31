@@ -6,7 +6,7 @@ This app allows users to search for any English word and get its meaning, pronun
 ---
 
 ## 🚀 Live Demo  
-🔗 [[Click Here to Try]]([url](https://anuj-jha-1.github.io/english-dictionary/))
+🔗 [Click Here to Try](https://anuj-jha-1.github.io/english-dictionary/)  
 
 ## 🌟 Features
 
@@ -23,7 +23,7 @@ This app allows users to search for any English word and get its meaning, pronun
 ## 📸 Screenshots  
 
 ### Home Page (Light Mode)
-![Home Page](./Screenshot%202025-07-20%20145811.png)
+![Home Page](./Screenshot%202025-07-20%20145851.png)
 
 ### Dark Mode
 ![Dark Mode](./Screenshot%202025-07-20%20145911.png)
